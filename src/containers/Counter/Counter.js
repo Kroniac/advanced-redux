@@ -33,8 +33,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onIncrementCounter: () => dispatch({ type: "INCREMENT" }),
     onDecrementCounter: () => dispatch({ type: "DECREMENT" }),
-    onADD5Counter: () => dispatch({ type: "ADD5" }),
-    onSUB5Counter: () => dispatch({ type: "SUB5" })
+    onADD5Counter: () => dispatch({ type: "ADD5", value: 10 }),
+    onSUB5Counter: () => dispatch({ type: "SUB5", value: 5 })
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
