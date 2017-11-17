@@ -1,4 +1,5 @@
 import * as actiontype from "../action/actionTypes";
+import { updateObject } from "../updateObject";
 
 const initialState = {
   result: []
@@ -6,10 +7,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actiontype.STORE_RESULT:
-      return {
-        ...state,
-        result: state.result.concat({ id: new Date(), value: action.result*3 })
-      };
+      return updateObject({
+        state,
+        result: state.result.concat({
+          id: new Date(),
+          value: action.result * 3
+        })
+      });
+
     case actiontype.DELETE_RESULT:
       //  const id =3;
       //  const newArray =  [...state.result];
@@ -17,12 +22,7 @@ const reducer = (state = initialState, action) => {
       const updatedArray = state.result.filter(
         result => result.id !== action.resultId
       );
-
-      return {
-        ...state,
-        result: updatedArray
-      };
-
+      return updateObject({ state, result: updatedArray });
     default:
       return state;
   }
