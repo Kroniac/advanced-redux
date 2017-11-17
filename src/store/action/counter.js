@@ -1,28 +1,24 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
-export const ADD = "ADD";
-export const SUB = "SUB";
-
+import * as actionTypes from "./actionTypes"
 export const increment = () => {
     return {
-      type: INCREMENT
+      type: actionTypes.INCREMENT
     };
   };
   
   export const decrement = () => {
     return {
-      type: DECREMENT
+      type: actionTypes.DECREMENT
     };
   };
   export const add = value => {
     return {
-      type: ADD,
+      type: actionTypes.ADD,
       value: value
     };
   };
   export const sub = value => {
     return {
-      type: SUB,
+      type: actionTypes.SUB,
       value: value
     };
   };
