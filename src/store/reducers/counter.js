@@ -10,13 +10,10 @@ const reducer = (state = initialState, action) => {
       return updateObject({ state, counter: state.counter + 1 })
     case actiontype.DECREMENT:
       return { state, counter: state.counter - 1 };
-
     case actiontype.ADD:
       return (state, { counter: state.counter + action.value });
-
     case actiontype.SUB:
       return updateObject({ ...state, counter: state.counter - action.value });
-
     default:
       return state;
   }
